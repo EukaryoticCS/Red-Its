@@ -1,17 +1,13 @@
 <?php
 include_once("../components/Header.php");
-include("../components/Card.php");
-//Given an id, read record
-//Read all records -- May do 2 separate pages instead
 
 ?>
 
-<p id="JSONData">No Data!</p>
+<div id="ItemsList" class='container' style='display: table-row'>No Items!</div>
 
 <script>
     var request = new XMLHttpRequest();
 
-    //OnLoad() function
     window.onload = function () {
         loadJson();
     }
@@ -33,16 +29,10 @@ include("../components/Card.php");
     function loadComplete(event) {
         var myResponse = null;
         var myData = null;
-        var myReturn = "<div class='container' style='display: table-row'></div>";
-
-        console.log(request);
-        console.log("ResponseText: " + request.responseText);
+        var myReturn = "";
 
         myResponse = request.responseText;
-
         myData = JSON.parse(myResponse);
-
-        console.log(myResponse);
 
         for (index in myData) {
             let currentItem = myData[index]
@@ -56,8 +46,8 @@ include("../components/Card.php");
                 "</div>" +
                 "</div>";
         }
-        console.log(myReturn);
-        document.getElementById("JSONData").innerHTML = myReturn;
+
+        document.getElementById("ItemsList").innerHTML = myReturn;
     }
 </script>
 
