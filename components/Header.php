@@ -18,3 +18,5 @@
     <a href="../Pages/ReadOnePage.php">Search</a>
     &nbsp;
     <a href="../Pages/UpdatePage.php">Update</a>
+    &nbsp;
+    <a href="../Pages/LoginPage.php">Login</a>
