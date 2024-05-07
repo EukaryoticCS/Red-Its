@@ -47,7 +47,6 @@ include("../components/Card.php");
         for (index in myData) {
             let currentItem = myData[index]
             myReturn +=
-            <?php  ?>
                 "<div class='card'>" +
                 "<img src=" + currentItem.jsonImageURL + " style='width:100%'>" +
                 "<div class='container'>" +
