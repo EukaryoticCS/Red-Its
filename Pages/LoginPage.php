@@ -18,8 +18,7 @@ if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['passw
             $_SESSION['valid'] = true;
             $_SESSION['username'] = $_POST['username'];
             $msg = "You have entered correct username and password";
-            //send to shop page (Read page???)
-            header("Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley", true, 301);
+            header("Location: /Shop/ShopPage.php", true, 301);
             exit();
 
         } else {
