@@ -4,8 +4,8 @@
 <html>
 <head>
     <meta content="text/html" ; charset="iso-8859-1" />
-    <title>Red-Its -- Brandon Smith, Damian Lagunas, Michael Odom</title>
-    <link rel="stylesheet" type="text/css" href="../StyleSheet.css" />
+    <title>Red-Its</title>
+    <link rel="stylesheet" type="text/css" href="../../StyleSheet.css" />
 </head>
 <br />
 <body>

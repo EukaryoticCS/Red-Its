@@ -45,7 +45,7 @@ include_once("../../components/ShopLinks.php");
 
         for (let index = 0; index < myData.length; index++) {
             let currentItem = myData[index];
-            if (currentItem.jsonCategory == "Food") {
+            if (currentItem.jsonCategory == "Clothing") {
                 itemsInRow++;
                 myReturn +=
                     "<td class='card'>" +
@@ -56,7 +56,7 @@ include_once("../../components/ShopLinks.php");
                     "<button type='Button' onClick='deleteItem(" + currentItem.jsonId + ")'>Delete</button>" +
                     "</div>" +
                     "</td>";
-                if (itemsInRow % 4 == 0) {
+                if (itemsInRow % 4 === 0) {
                     myReturn += "</tr><tr>";
                 }
             }
