@@ -18,6 +18,8 @@
             &nbsp;
             <a class="beautiful_a_tag" href="../Pages/UpdatePage.php">Update</a>
             &nbsp;
+            <a class="beautiful_a_tag" href="../Pages/Login.php">Update</a>
+            &nbsp;
             <button class="beautiful_a_tag"><img width="20" height="20" src="../Images/theme_icon.png" /></button>
         </div>
     </div>
