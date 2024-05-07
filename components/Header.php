@@ -4,8 +4,8 @@
 <html>
 <head>
     <meta content="text/html" ; charset="iso-8859-1" />
-    <title>A Patchy Website -- Brandon Smith</title>
-    <link rel="stylesheet" type="text/css" href="../StyleSheet.css" />
+    <title>Red-Its</title>
+    <link rel="stylesheet" type="text/css" href="../../StyleSheet.css" />
 </head>
 <br />
 <body>
