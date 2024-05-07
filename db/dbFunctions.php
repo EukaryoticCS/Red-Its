@@ -31,7 +31,8 @@ function MyJSONGetAll($DatabaseConnection)
     $query = "SELECT JSON_OBJECT('jsonId', item.id,
 	'jsonImageURL', item.imageURL,
     'jsonName', item.name,
-    'jsonPrice', item.price) as Json1
+    'jsonPrice', item.price,
+    'jsonCategory', item.category) as Json1
     FROM shopitems item;";
 
     return @mysqli_query($DatabaseConnection, $query);
