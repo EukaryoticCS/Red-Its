@@ -63,4 +63,27 @@ function MyJSONDelete($DatabaseConnection, $itemId)
 
     return @mysqli_query($DatabaseConnection, $query);
 }
+
+function GetUser($DatabaseConnection, $userId) {
+    $query = "SELECT JSON_OBJECT('userId', user.id,
+    'username, user.username,
+    'password, user.password) as Json1
+    FROM users user
+    WHERE user.id = $userId;";
+
+    return @mysqli_query($DatabaseConnection, $query);
+}
+
+function CreateUser($DatabaseConnection, $username, $password) {
+    $query = "INSERT INTO users (username, password) VALUES ($username, $password);";
+
+    return @mysqli_query($DatabaseConnection, $query);
+}
+
+function DeleteUser($DatabaseConnection, $userId) {
+    $query = "DELETE FROM users
+    WHERE id = $userId;";
+
+    return @mysqli_query($DatabaseConnection, $query);
+}
 ?>
