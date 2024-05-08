@@ -1,8 +1,12 @@
+<?php
+session_start();
+?>
+
 <html>
 <head>
-    <meta content="text/html" ; charset="iso-8859-1" />
+    <meta content="text/html" charset="iso-8859-1" />
     <title>Red-Its - Red Goods and More</title>
-    <link rel="stylesheet" type="text/css" href="../<?php echo $stylesheet_name ?>.css" />
+    <link rel="stylesheet" type="text/css" href="../<?php echo $_SESSION["MyTheme"]; ?>.css"  />
 </head>
 <br />
 <body>
@@ -18,8 +22,24 @@
             &nbsp;
             <a class="beautiful_a_tag" href="../Pages/UpdatePage.php">Update</a>
             &nbsp;
-            <a class="beautiful_a_tag" href="../Pages/Login.php">Update</a>
-            &nbsp;
-            <button class="beautiful_a_tag"><img width="20" height="20" src="../Images/theme_icon.png" /></button>
+            <button class="beautiful_a_tag" onclick="change_theme()"><img width="20" height="20" src="../Images/theme_icon.png" /></button>
         </div>
     </div>
+
+
+
+
+   <script>
+       var request = new XMLHttpRequest;
+
+       function change_theme()
+       {
+           theme_index = <?php echo $_SESSION["CurrentThemeIndex"]?>;           request.open('GET', '../Pages/ChangeTheme.php');
+           request.setRequestHeader("Content-type", "application/x-www-fm-urlenced");
+           request.send();
+           request.onload = () => { window.location = '..<?php echo $_SERVER['REQUEST_URI']; ?>' }; //LET'S FUCKING GOOOOOOO
+
+       }
+
+   </script>
+    
