@@ -14,13 +14,11 @@ session_start();
         <div class="center">
             <a class="beautiful_a_tag" href="../Pages/index.php">Home</a>
             &nbsp;
-            <a class="beautiful_a_tag" href="../Pages/CreatePage.php">Create</a>
+            <a class="beautiful_a_tag" href="../Pages/Shop/ShopPage.php">Shop</a>
             &nbsp;
-            <a class="beautiful_a_tag" href="../Pages/ReadPage.php">View All</a>
+            <a class="beautiful_a_tag" href="../Pages/AboutPage.php">About</a>
             &nbsp;
-            <a class="beautiful_a_tag" href="../Pages/ReadOnePage.php">Search</a>
-            &nbsp;
-            <a class="beautiful_a_tag" href="../Pages/UpdatePage.php">Update</a>
+            <a class="beautiful_a_tag" href="../Pages/LoginPage.php">Login</a>
             &nbsp;
             <button class="beautiful_a_tag" onclick="change_theme()"><img width="20" height="20" src="../Images/theme_icon.png" /></button>
         </div>
