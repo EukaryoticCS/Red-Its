@@ -6,6 +6,7 @@ session_start();
 <head>
     <meta content="text/html" charset="iso-8859-1" />
     <title>Red-Its - Red Goods and More</title>
+
     <link rel="stylesheet" type="text/css" href="../<?php echo $_SESSION["MyTheme"]; ?>.css"  />
 </head>
 <br />
@@ -26,7 +27,6 @@ session_start();
 
 
 
-
    <script>
        var request = new XMLHttpRequest;
 
@@ -41,4 +41,4 @@ session_start();
        }
 
    </script>
-    
+   

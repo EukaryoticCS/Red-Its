@@ -5,7 +5,7 @@
   <PropertyGroup>
     <EnvName>PHPDev</EnvName>
     <RuntimeVersion>8.3</RuntimeVersion>
-    <SpecificPageValue>Pages/index.php</SpecificPageValue>
+    <SpecificPageValue>Pages/SingUpPage.php</SpecificPageValue>
     <StartAction>SpecificPage</StartAction>
   </PropertyGroup>
 </Project>
