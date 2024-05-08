@@ -1,17 +1,12 @@
 <?php
-include_once "Header.php";
+include_once("../components/Header.php");
 ?>
 
 <h1>Signup</h1>
-    <form action="process-signup.php" method="post" id="signup" novalidate>
+    <form action="/db/apiCreateUser.php" method="post" id="signup" novalidate>        
         <div>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name">
-        </div>
-        
-        <div>
-            <label for="email">email</label>
-            <input type="email" id="email" name="email">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username">
         </div>
         
         <div>
@@ -19,19 +14,19 @@ include_once "Header.php";
             <input type="password" id="password" name="password">
         </div>
         
-        <div>
+        <!--<div>
             <label for="password_confirmation">Repeat password</label>
             <input type="password" id="password_confirmation" name="password_confirmation">
-        </div>
+        </div>-->
         
-        <button>Sign up</button>
+        <button onclick="makeuser">Sign up</button>
     </form>
 
 <?php
-if (strlen($_POST["password"]) < 8) 
-{
-    die("Password must be at least 8 characters");
-}
+//if (strlen($_POST["password"]) < 8) 
+//{
+//    die("Password must be at least 8 characters");
+//}
 
 if (empty($_POST["username"])) {
     die("Username is required");
@@ -50,35 +45,22 @@ if (!preg_match("/[0-9]/", $_POST["password"]))
 if ($_POST["password"] !== $_POST["password_confirmation"]) {
     die("Passwords must match");
 }
-
-$mysqli = require __DIR__ . "/dbFunctions.php";
-
-$sql = "INSERT INTO user (Username, password)
-        VALUES (?, ?, ?)";
-        
-$stmt = $mysqli->stmt_init();
-
-if ( ! $stmt->prepare($sql)) {
-    die("SQL error: " . $mysqli->error);
-}
-
-$stmt->bind_param("sss",
-    $_POST["username"],
-    $password);  
-if ($stmt->execute()) {
-
-    header("Location: /Shop/ShopPage.php");
-    exit;
-    
-} else {
-    
-    if ($mysqli->errno === 1062) {
-        die("Username already taken");
-    } else {
-        die($mysqli->error . " " . $mysqli->errno);
-    }
 ?>
 
+<script>
+    var request = new XMLHttpRequest();
+
+    function makeuser()
+    {
+        $username = document.getElementById('username').value;
+        $password = document.getElementById('password').value;
+
+        request.open("POST", "../db/apiCreateUser.php");
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request.send('username=' + $username + "password=" + $password);
+    }
+</script>
+
 <?php
-include_once "Footer.php";
+include_once "../components/Footer.php";
 ?>

@@ -1,7 +1,7 @@
 <?php
 
-define("DB_USER", "MyUser");
-define("DB_PASSWORD", "talasIV");
+define("DB_USER", "root"); //MyUser
+define("DB_PASSWORD", "1234"); //talasIV
 define("DB_SERVER", "localhost");
 define("DB_NAME", "csc_270");
 
@@ -75,7 +75,7 @@ function GetUser($DatabaseConnection, $userId) {
 }
 
 function CreateUser($DatabaseConnection, $username, $password) {
-    $query = "INSERT INTO users (username, password) VALUES ($username, $password);";
+    $query = "INSERT INTO users (username, password) VALUES ('$username', '$password');";
 
     return @mysqli_query($DatabaseConnection, $query);
 }

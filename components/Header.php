@@ -6,7 +6,7 @@ session_start();
 <head>
     <meta content="text/html" charset="iso-8859-1" />
     <title>Red-Its - Red Goods and More</title>
-    <link rel="stylesheet" type="text/css" href="../<?php echo $_SESSION["MyTheme"]; ?>.css"  />
+    <link rel="stylesheet" type="text/css" href="../<?php echo $_SESSION["MyTheme"]; ?>.css" />
 </head>
 <br />
 <body>
@@ -29,17 +29,17 @@ session_start();
 
 
 
-   <script>
-       var request = new XMLHttpRequest;
+    <script>
+        var request = new XMLHttpRequest;
 
-       function change_theme()
-       {
-           theme_index = <?php echo $_SESSION["CurrentThemeIndex"]?>;           request.open('GET', '../Pages/ChangeTheme.php');
-           request.setRequestHeader("Content-type", "application/x-www-fm-urlenced");
-           request.send();
-           request.onload = () => { window.location = '..<?php echo $_SERVER['REQUEST_URI']; ?>' }; //LET'S FUCKING GOOOOOOO
+        function change_theme()
+        {
+            theme_index = <?php echo $_SESSION["CurrentThemeIndex"] ?>;
+            request.open('GET', '../Pages/ChangeTheme.php');
+            request.setRequestHeader("Content-type", "application/x-www-fm-urlenced");
+            request.send();
+            request.onload = () => { window.location = '..<?php echo $_SERVER['REQUEST_URI']; ?>' }; //LET'S FUCKING GOOOOOOO
 
-       }
+        }
 
-   </script>
-    
+    </script>
