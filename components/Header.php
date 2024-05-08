@@ -32,7 +32,8 @@ session_start();
 
        function change_theme()
        {
-           theme_index = <?php echo $_SESSION["CurrentThemeIndex"]?>;           request.open('GET', '../Pages/ChangeTheme.php');
+           theme_index = <?php echo $_SESSION["CurrentThemeIndex"]?>;
+           request.open('GET', '../Pages/ChangeTheme.php');
            request.setRequestHeader("Content-type", "application/x-www-fm-urlenced");
            request.send();
            request.onload = () => { window.location = '..<?php echo $_SERVER['REQUEST_URI']; ?>' }; //LET'S FUCKING GOOOOOOO
