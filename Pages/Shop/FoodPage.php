@@ -1,21 +1,38 @@
 <?php
 include_once("../../components/Header.php");
 include_once("../../components/ShopLinks.php");
+session_start();
+$_SESSION['userId'] = 1;
 ?>
 
 <div id="ItemsList" class='container' style='display: table-row'>No Items!</div>
 
 <script>
-    var request = new XMLHttpRequest();
+    var itemsRequest = new XMLHttpRequest();
+    var userRequest = new XMLHttpRequest();
+    var user = {};
 
     window.onload = function () {
+        const userId = <?php echo $_SESSION['userId']; ?>;
+        loadUser(userId);
         loadJson();
     }
 
+    function loadUser($userId) {
+        userRequest.open("POST", "../../db/apiGetUser.php");
+        userRequest.onload = userLoaded;
+        userRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        userRequest.send('userId=' + $userId);
+    }
+
+    function userLoaded(event) {
+        user = userRequest.responseText !== "" ? JSON.parse(userRequest.responseText)[0] : {};
+    }
+
     function loadJson() {
-        request.open("GET", "../../db/apiReadRecords.php");
-        request.onload = loadComplete;
-        request.send();
+        itemsRequest.open("GET", "../../db/apiReadRecords.php");
+        itemsRequest.onload = loadComplete;
+        itemsRequest.send();
     }
 
     function deleteItem($itemId) {
@@ -33,7 +50,7 @@ include_once("../../components/ShopLinks.php");
             "<tr class='container' style = 'display: table-row'>";
 
 
-        myResponse = request.responseText;
+        myResponse = itemsRequest.responseText;
         myData = JSON.parse(myResponse);
 
         const formatter = new Intl.NumberFormat('en-US', {
@@ -52,10 +69,15 @@ include_once("../../components/ShopLinks.php");
                     "<img src=" + currentItem.jsonImageURL + " style='width:100%'>" +
                     "<div class='container'>" +
                     "<h4><b>" + currentItem.jsonName + "</b></h4>" +
-                    "<p>" + formatter.format(currentItem.jsonPrice) + "</p>" +
-                    "<button type='Button' onClick='deleteItem(" + currentItem.jsonId + ")'>Delete</button>" +
-                    "</div>" +
+                    "<p>" + formatter.format(currentItem.jsonPrice) + "</p>";
+
+                if (user.admin) {
+                    myReturn += "<button type='Button' onClick='deleteItem(" + currentItem.jsonId + ")'>Delete</button>";
+                }
+
+                myReturn += "</div>" +
                     "</td>";
+
                 if (itemsInRow % 4 == 0) {
                     myReturn += "</tr><tr>";
                 }
