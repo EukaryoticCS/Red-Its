@@ -65,6 +65,7 @@ $_SESSION['userId'] = 1;
             let currentItem = myData[index];
             myReturn +=
                 "<td class='card'>" +
+                "<a href = ../../Shop/ItemPage?id="+currentItem.jsonId+".php>" +
                 "<img src=" + currentItem.jsonImageURL + " style='width:100%'>" +
                 "<div class='container'>" +
                 "<h4><b>" + currentItem.jsonName + "</b></h4>" +
