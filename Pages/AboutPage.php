@@ -1,5 +1,5 @@
 <?php
-include_once "Header.php";
+include_once "../components/Header.php";
 ?>
 
 <h2>About Red-Its</h2>
@@ -16,5 +16,5 @@ include_once "Header.php";
 <br />
 
 <?php
-include_once "Footer.php";
+include_once("../components/Footer.php");
 ?>
