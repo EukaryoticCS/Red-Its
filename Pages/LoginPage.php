@@ -1,5 +1,6 @@
 <?php
 include_once "Header.php";
+include_once "dbFunctions.php";
 ob_start();
 session_start();
 ?>
