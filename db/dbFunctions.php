@@ -66,8 +66,9 @@ function MyJSONDelete($DatabaseConnection, $itemId)
 
 function GetUser($DatabaseConnection, $userId) {
     $query = "SELECT JSON_OBJECT('userId', user.id,
-    'username, user.username,
-    'password, user.password) as Json1
+    'username', user.username,
+    'password', user.password,
+    'admin', user.admin) as Json1
     FROM users user
     WHERE user.id = $userId;";
 
