@@ -4,9 +4,10 @@ ob_start();
 session_start();
 
 
-if(isset( $_POST["userId"])) {
+if (isset($_POST["userId"])) {
     $_SESSION["userId"] = $_POST["userId"];
-};
+}
+;
 ?>
 
 
@@ -31,7 +32,7 @@ if(isset( $_POST["userId"])) {
                 newRequest.open('POST', './LoginPage.php', true);
                 newRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                 newRequest.onload = function () {
-                    window.location = './Shop/ShopPage.php'
+                    window.location = './index.php';
                 }
                 newRequest.send('userId=' + myUser);
             }

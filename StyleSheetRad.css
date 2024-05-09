@@ -1,5 +1,5 @@
 ﻿a:visited, a:active, a:link {
-    color: #1c1c1c;
+    color: aliceblue;
 }
 
 
@@ -11,15 +11,15 @@
 body {
     color: aliceblue;
     background-image: url(https://static.vecteezy.com/system/resources/previews/006/893/497/large_2x/fire-flames-on-black-background-free-photo.jpg);
-    background-size:contain;
+    background-size: cover;
 }
-
 
 .card {
     /* Add shadows to create the "card" effect */
+    color: aliceblue;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 200px;
+    width: 25%;
     display: table-cell;
 }
 

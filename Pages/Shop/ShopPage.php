@@ -10,23 +10,11 @@ session_start();
 <script>
     var itemsRequest = new XMLHttpRequest();
     var userRequest = new XMLHttpRequest();
-    var user = {};
 
     window.onload = function () {
         const userId = <?php echo $_SESSION['userId'] ?>;
         loadUser(userId);
         loadJson();
-    }
-
-    function loadUser($userId) {
-        userRequest.open("POST", "../../db/apiGetUser.php");
-        userRequest.onload = userLoaded;
-        userRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        userRequest.send('userId=' + $userId);
-    }
-
-    function userLoaded(event) {
-        user = userRequest.responseText !== "" ? JSON.parse(userRequest.responseText)[0] : {};
     }
 
     function loadJson() {
@@ -65,18 +53,17 @@ session_start();
             let currentItem = myData[index];
             myReturn +=
                 "<td class='card'>" +
-                "<a href = ../../Shop/ItemPage?id="+currentItem.jsonId+".php>" +
-                "<img src=" + currentItem.jsonImageURL + " style='width:100%'>" +
+                "<a class='beautiful_a_tag' href = ./ItemPage.php?id=" + currentItem.jsonId + ">" +
+                "<img src=" + currentItem.jsonImageURL + " style='width:100%'/>" +
                 "<div class='container'>" +
                 "<h4><b>" + currentItem.jsonName + "</b></h4>" +
                 "<p>" + formatter.format(currentItem.jsonPrice) + "</p>"
 
-            if (user.admin) { 
+            if (user.admin) {
                 myReturn += "<button type='Button' onClick='deleteItem(" + currentItem.jsonId + ")'>Delete</button>";
             }
 
-            myReturn += "</div>" +
-                "</td>";
+            myReturn += "</div></a></td>";
 
             if (itemsInRow % 4 === 0) {
                 myReturn += "</tr><tr>";

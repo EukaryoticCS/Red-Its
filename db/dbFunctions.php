@@ -19,7 +19,7 @@ function MyJSONGetOne($DatabaseConnection, $itemId)
     'jsonName', item.name,
     'jsonPrice', item.price) as Json1
     FROM shopitems item
-    WHERE item.id = $itemId;";
+    WHERE item.id = '$itemId';";
 
     $result = mysqli_query($DatabaseConnection, $query);
 
@@ -38,9 +38,9 @@ function MyJSONGetAll($DatabaseConnection)
     return @mysqli_query($DatabaseConnection, $query);
 }
 
-function MyJSONCreate($DatabaseConnection, $imageURL, $name, $price)
+function MyJSONCreate($DatabaseConnection, $imageURL, $name, $price, $category)
 {
-    $query = "INSERT INTO shopitems (imageURL, name, price) VALUES ('$imageURL', '$name', $price);";
+    $query = "INSERT INTO shopitems (imageURL, name, price, category) VALUES ('$imageURL', '$name', $price, '$category');";
 
     return @mysqli_query($DatabaseConnection, $query);
 }

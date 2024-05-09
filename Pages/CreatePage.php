@@ -9,6 +9,13 @@ include("../components/Card.php");
     <input type="text" id="imageURL" placeholder="e.g., '..\\Images\\Apple.png'" />
     <input type="text" id="name" placeholder="e.g., 'Apple'" />
     <input type="text" id="price" placeholder="e.g., 4.50" />
+    <select id="category">
+        <option value="Food">Food</option>
+        <option value="Food">Clothing</option>
+        <option value="Food">Stickers</option>
+        <option value="Food">Miscellaneous</option>
+     </select>
+
     <button type="button" onclick="createItem()">Submit</button>
 </form>
 
@@ -19,11 +26,12 @@ include("../components/Card.php");
         $itemImageURL = document.getElementById('imageURL').value;
         $itemName = document.getElementById('name').value;
         $itemPrice = document.getElementById('price').value;
+        $category = document.getElementById('category').value;
 
-        request.onload = () => { window.location = './ReadPage.php' }; //LET'S FUCKING GOOOOOOO
+        request.onload = () => { window.location = './Shop/ShopPage.php' }; //LET'S FUCKING GOOOOOOO
         request.open("POST", "../db/apiCreateRecord.php");
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        request.send('itemImageURL=' + $itemImageURL + "&itemName=" + $itemName + "&itemPrice=" + $itemPrice);
+        request.send('itemImageURL=' + $itemImageURL + "&itemName=" + $itemName + "&itemPrice=" + $itemPrice + "&category=" + $category);
     }
 </script>
 

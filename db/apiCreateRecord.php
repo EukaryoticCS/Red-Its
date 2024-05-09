@@ -8,7 +8,8 @@ $MyDBConn = GetConnection();
 $ItemImageURL = $_POST['itemImageURL'];
 $ItemName = $_POST['itemName'];
 $ItemPrice = $_POST['itemPrice'];
-$MyJSONResult = MyJSONCreate($MyDBConn, $ItemImageURL, $ItemName, $ItemPrice);
+$category = $_POST['category'];
+$MyJSONResult = MyJSONCreate($MyDBConn, $ItemImageURL, $ItemName, $ItemPrice, $category);
 
 mysqli_close($MyDBConn);
 ?>
