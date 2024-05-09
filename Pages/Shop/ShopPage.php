@@ -3,7 +3,6 @@
 include_once("../../components/Header.php");
 include_once("../../components/ShopLinks.php");
 session_start();
-$_SESSION['userId'] = 1;
 ?>
 
 <div id="ItemsList" class='container' style='display: table-row'>No Items!</div>

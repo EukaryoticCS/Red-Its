@@ -1,7 +1,7 @@
 <?php
 
-define("DB_USER", "root"); //MyUser
-define("DB_PASSWORD", "1234"); //talasIV
+define("DB_USER", "MyUser"); //MyUser
+define("DB_PASSWORD", "talasIV"); //talasIV
 define("DB_SERVER", "localhost");
 define("DB_NAME", "csc_270");
 
