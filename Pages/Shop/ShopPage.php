@@ -82,14 +82,6 @@ $_SESSION['userId'] = 1;
             }
         }
 
-        //if (user.admin) {
-        //    myReturn += "<td class='card'>" +
-        //        "<img src='' style='width:100%'>" +
-        //        "<div class='container'>" +
-        //        "<h4><b>Add new item</b></h4>" +
-        //        "</div></td>"
-        //}
-
         myReturn += "</tr>" +
             "</table >";
 

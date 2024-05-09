@@ -5,7 +5,7 @@
   <PropertyGroup>
     <EnvName>PHPDev</EnvName>
     <RuntimeVersion>8.3</RuntimeVersion>
-    <SpecificPageValue>Pages/Shop/ShopPage.php</SpecificPageValue>
+    <SpecificPageValue>Pages/Shop/MiscellaneousPage.php</SpecificPageValue>
     <StartAction>SpecificPage</StartAction>
   </PropertyGroup>
 </Project>
