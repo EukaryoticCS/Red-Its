@@ -1,6 +1,7 @@
 <?php
 include_once("../../components/Header.php");
 include_once("../../components/ShopLinks.php");
+session_start();
 ?>
 
 <p id="JsonData">NO DATA!</p>
@@ -9,7 +10,8 @@ include_once("../../components/ShopLinks.php");
     let itemRequest = new XMLHttpRequest();
 
     window.onload = function () {
-        console.log("Onload worked");
+        const userId = <?php echo $_SESSION['userId'] ?>;
+        loadUser(userId);
         loadJson();
     };
 

@@ -54,14 +54,14 @@ session_start();
                     "<td class='card'>" +
                     "<a class='beautiful_a_tag' href = ./ItemPage.php?id=" + currentItem.jsonId + ">" +
                     "<img src=" + currentItem.jsonImageURL + " style='width:100%'>" +
-                    "<div class='container'>" +
+                    "</a><div class='container'>" +
                     "<h4><b>" + currentItem.jsonName + "</b></h4>" +
                     "<p>" + formatter.format(currentItem.jsonPrice) + "</p>";
                 if (user.admin) {
                     myReturn += "<button type='Button' onClick='deleteItem(" + currentItem.jsonId + ")'>Delete</button>";
                 }
 
-                myReturn += "</div></a></td>";
+                myReturn += "</div></td>";
 
                 if (itemsInRow % 4 === 0) {
                     myReturn += "</tr><tr>";

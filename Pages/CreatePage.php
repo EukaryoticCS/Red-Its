@@ -11,9 +11,9 @@ include("../components/Card.php");
     <input type="text" id="price" placeholder="e.g., 4.50" />
     <select id="category">
         <option value="Food">Food</option>
-        <option value="Food">Clothing</option>
-        <option value="Food">Stickers</option>
-        <option value="Food">Miscellaneous</option>
+        <option value="Clothing">Clothing</option>
+        <option value="Stickers">Stickers</option>
+        <option value="Miscellaneous">Miscellaneous</option>
      </select>
 
     <button type="button" onclick="createItem()">Submit</button>
@@ -27,6 +27,7 @@ include("../components/Card.php");
         $itemName = document.getElementById('name').value;
         $itemPrice = document.getElementById('price').value;
         $category = document.getElementById('category').value;
+        console.log($category);
 
         request.onload = () => { window.location = './Shop/ShopPage.php' }; //LET'S FUCKING GOOOOOOO
         request.open("POST", "../db/apiCreateRecord.php");
