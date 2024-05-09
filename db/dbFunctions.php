@@ -75,6 +75,14 @@ function GetUser($DatabaseConnection, $userId) {
     return @mysqli_query($DatabaseConnection, $query);
 }
 
+function MyJsonLoginUser($DatabaseConnection, $username, $password){
+    $query = "SELECT id 
+    FROM users
+    WHERE username = '$username' AND password = '$password';";
+
+    return @mysqli_query($DatabaseConnection, $query);
+}
+
 function CreateUser($DatabaseConnection, $username, $password) {
     $query = "INSERT INTO users (username, password) VALUES ('$username', '$password');";
 

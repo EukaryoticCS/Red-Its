@@ -1,4 +1,5 @@
 <?php
+
 include_once("../../components/Header.php");
 include_once("../../components/ShopLinks.php");
 session_start();

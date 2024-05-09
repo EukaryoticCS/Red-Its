@@ -58,6 +58,8 @@ if ($_POST["password"] !== $_POST["password_confirmation"]) {
         request.open("POST", "../db/apiCreateUser.php");
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         request.send('username=' + $username + "password=" + $password);
+
+        request.onload = () => { window.location = './ShopPage.php' }; //LET'S FUCKING GOOOOOOO
     }
 </script>
 
